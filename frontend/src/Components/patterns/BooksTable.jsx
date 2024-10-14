@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const BooksTable = ({ books }) => {
   return (
     <div>
-      <table className="ml-[250px] mt-[30px] w-[60%] border border-rose-900  bg-rose-100/50">
+      <table className="ml-[250px] mt-[30px] w-[60%] border border-rose-900  bg-rose-100/50 mb-8">
         <thead>
           <tr>
             <th className="border border-rose-900 p-4">No</th>

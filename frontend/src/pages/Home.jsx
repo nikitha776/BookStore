@@ -45,7 +45,8 @@ const Home = () => {
           const filteredList = books.filter((res) => {
             const tmatch = res.title.replace(/\s+/g, '').toLowerCase().includes(searchText.replace(/\s+/g, '').toLowerCase());
             const amatch = res.author.replace(/\s+/g, '').toLowerCase().includes(searchText.replace(/\s+/g, '').toLowerCase());
-            return tmatch || amatch;
+            const gmatch = res.genre.replace(/\s+/g, '').toLowerCase().includes(searchText.replace(/\s+/g, '').toLowerCase());
+            return tmatch || amatch || gmatch;
           });
           setFilteredList(filteredList);
         }}><FaSearch className="m-2" /></button>

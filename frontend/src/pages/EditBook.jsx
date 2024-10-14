@@ -12,6 +12,8 @@ const EditBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishedYear, setPublishedYear] = useState('');
+  const [description,setDescription] = useState('');
+  const [genre,setGenre] = useState('');
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -53,20 +55,28 @@ const EditBook = () => {
         <h1 className = "text-2xl font-bold text-white mt-1">Edit Book</h1>
       </div>
       {loading ? <Shimmer /> : ''}
-        <div className ="border border-rose-900 w-[30%] ml-[500px] mt-[100px] rounded-md p-4  pl-8 pr-8 bg-rose-100/50">
-          <div>
-            <label className = "mr-2 text-lg font-semibold">Title : </label>
+        <div className ="border border-rose-900 w-[40%] ml-[425px] mt-[40px] rounded-md p-4  pl-8 pr-8 bg-rose-100/50">
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Title : </label>
             <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {title} onChange = {(e) => setTitle(e.target.value)}></input>
           </div>
-          <div>
-            <label className = "mr-2 text-lg font-semibold">Author : </label>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Author : </label>
             <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {author} onChange = {(e) => setAuthor(e.target.value)}></input>
           </div>
-          <div>
-            <label className = "mr-2 text-lg font-semibold">Published Year : </label>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Published Year : </label>
             <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {publishedYear} onChange = {(e) => setPublishedYear(e.target.value)}></input>
           </div>
-          <button className = "border border-white p-2 rounded-lg mt-[20px] ml-[150px] bg-rose-400 text-white" onClick = {handleEditBook}>Save Changes</button>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Genre : </label>
+            <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {genre} onChange = {(e) => setGenre(e.target.value)}></input>
+          </div>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Description : </label>
+            <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {description} onChange = {(e) => setDescription(e.target.value)}></input>
+          </div>
+          <button className = "border border-white p-2 rounded-lg mt-[20px] ml-[200px] bg-rose-400 text-white" onClick = {handleEditBook}>Save Changes</button>
         </div>
       </div>
   )

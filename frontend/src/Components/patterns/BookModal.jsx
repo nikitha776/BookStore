@@ -23,6 +23,7 @@ const BookModal = ({ book, onClose }) => {
               <div className="mt-1 mr-2 text-xl text-red-400"><CgProfile /></div>
               <div><h3 className="text-base">{book.author}</h3></div>
             </div>
+            <h2 className='m-2 text-md'>{book.genre}</h2>
             <h3 className='m-2 text-sm'>{book.publishedYear}</h3>
           </div>
           <div className="flex">
@@ -30,14 +31,9 @@ const BookModal = ({ book, onClose }) => {
             <Link className="m-2 text-lg" to={`/books/edit/${book._id}`}><FaRegEdit className="text-stone-700" /></Link>
             <Link className="m-2 text-lg" to={`/books/delete/${book._id}`}><MdDelete className="text-orange-900" /></Link>
           </div>
-          <p className='mt-4'>Anything You want to show</p>
+          <p className='mt-4 font-bold'>Description</p>
           <p className='my-2'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quia
-            voluptatum sint. Nisi impedit libero eveniet cum vitae qui expedita
-            necessitatibus assumenda laboriosam, facilis iste cumque a pariatur
-            nesciunt cupiditate voluptas? Quis atque earum voluptate dolor nisi
-            dolorum est? Deserunt placeat cumque quo dicta architecto, dolore
-            vitae voluptate sequi repellat!
+            {book.description}
           </p>
         </div>
       </div>

@@ -10,12 +10,14 @@ const CreateBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishedYear, setPublishedYear] = useState('');
+  const [description,setDescription] = useState('');
+  const [genre,setGenre] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {enqueueSnackbar} = useSnackbar();
 
   const handleSaveBook = () => {
-    const data = { title, author, publishedYear };
+    const data = { title, author, publishedYear, genre, description};
     setLoading(true);
     axios.post('http://localhost:3000/books', data)
       .then(() => {
@@ -48,6 +50,14 @@ const CreateBook = () => {
           <div className = "m-4">
             <label className = "text-lg font-semibold">Published Year</label>
             <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type="text" value = {publishedYear} onChange = {(e) => setPublishedYear(e.target.value)}></input>
+          </div>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Genre : </label>
+            <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {genre} onChange = {(e) => setGenre(e.target.value)}></input>
+          </div>
+          <div className = "m-3">
+            <label className = "mr-2 text-lg font-semibold m-2">Description : </label>
+            <input className = "p-2 border w-[100%] border-rose-800 bg-transparent rounded-md" type = "text" value = {description} onChange = {(e) => setDescription(e.target.value)}></input>
           </div>
           <button className = "border border-white p-1 w-[80px] rounded-lg mt-[20px] ml-[150px] bg-rose-400 text-white" onClick = {handleSaveBook}>Save</button>
         </div>

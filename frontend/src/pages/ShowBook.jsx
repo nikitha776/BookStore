@@ -44,6 +44,14 @@ const ShowBook = () => {
               <span>{book.publishedYear}</span>
             </div>
             <div>
+              <span className = "font-bold m-4">Genre : </span>
+              <span>{book.genre}</span>
+            </div>
+            <div className = "mt-2">
+              <span className = "font-bold m-4">Description : </span>
+              <div className = "ml-4 m-2">{book.description}</div>
+            </div>
+            <div>
               <span className = "font-bold m-4">Create Time : </span>
               <span>{new Date(book.createdAt).toString()}</span>
             </div>
